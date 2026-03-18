@@ -1,0 +1,2 @@
+# SmartHR
+global hr helper
