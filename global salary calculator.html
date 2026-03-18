@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; -webkit-text-stroke: #000000; min-height: 18.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Global Salary Calculator | 全球薪资计算器&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body { font-family: Arial, sans-serif; padding: 30px; max-width: 800px; margin: 0 auto; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.lang-switch { text-align: right; margin-bottom: 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.lang-btn { padding: 8px 15px; cursor: pointer; border: 1px solid #ccc; background: #fff; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.lang-btn.active { background: #0078d4; color: white; border-color: #0078d4; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>input, select { padding: 8px; margin: 10px 0; width: 100%; max-width: 300px; box-sizing: border-box; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button { padding: 10px 20px; cursor: pointer; background-color: #0078d4; color: white; border: none; border-radius: 4px; margin-top: 10px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button:hover { background-color: #005a9e; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>#result { margin-top: 20px; padding: 20px; border: 1px solid #eee; border-radius: 4px; display: none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.label { font-weight: bold; margin-bottom: 5px; display: block; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hidden { display: none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 语言切换按钮 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="lang-switch"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="lang-btn active" onclick="switchLang('en')"&gt;English&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="lang-btn" onclick="switchLang('cn')"&gt;中文&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 英文界面 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="en-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;🌍 Global Salary Calculator (HRBP Tool)&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="label"&gt;Country:&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="country-en"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;USA&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;France&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;UK&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;Germany&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;Spain&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;Italy&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;Netherlands&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;India&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;Japan&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;Brazil&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="label"&gt;Monthly Gross Salary (USD):&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;input type="number" id="salary-en" placeholder="Enter amount in USD" min="0"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="label"&gt;Marital Status:&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="married-en"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="no"&gt;Single&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="yes"&gt;Married&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="label"&gt;Employment Type:&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="employment-en"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="consultant"&gt;Consultant&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="horizons"&gt;EOR - Horizons ($450)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="gp"&gt;EOR - G-P ($400)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="self-employed"&gt;Self-Employed&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button onclick="calculate('en')"&gt;Calculate&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 中文界面 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="cn-content" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;🌍 全球薪资计算器 (HRBP工具)&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="label"&gt;国家:&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="country-cn"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;美国 (USA)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;法国 (France)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;英国 (UK)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;德国 (Germany)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;西班牙 (Spain)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;意大利 (Italy)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;荷兰 (Netherlands)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;印度 (India)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;日本 (Japan)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;巴西 (Brazil)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="label"&gt;月税前薪资 (美元):&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;input type="number" id="salary-cn" placeholder="请输入美元金额" min="0"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="label"&gt;婚姻状况:&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="married-cn"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="no"&gt;单身&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="yes"&gt;已婚&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label class="label"&gt;雇佣类型:&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="employment-cn"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="consultant"&gt;顾问&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="horizons"&gt;雇佣外包 - Horizons (450美元/月)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="gp"&gt;雇佣外包 - G-P (400美元/月)&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="self-employed"&gt;自雇人士&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button onclick="calculate('cn')"&gt;计算&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 结果展示区 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="result"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 税率数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const taxData = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>USA: { employer_rate: 0.10, employee_social: 0.08, tax_single: 0.22, tax_married: 0.18 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>France: { employer_rate: 0.45, employee_social: 0.22, tax_single: 0.20, tax_married: 0.14 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>UK: { employer_rate: 0.13, employee_social: 0.12, tax_single: 0.20, tax_married: 0.18 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Germany: { employer_rate: 0.21, employee_social: 0.20, tax_single: 0.25, tax_married: 0.20 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Spain: { employer_rate: 0.30, employee_social: 0.18, tax_single: 0.22, tax_married: 0.18 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Italy: { employer_rate: 0.30, employee_social: 0.19, tax_single: 0.23, tax_married: 0.20 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Netherlands: { employer_rate: 0.18, employee_social: 0.15, tax_single: 0.25, tax_married: 0.20 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>India: { employer_rate: 0.18, employee_social: 0.12, tax_single: 0.20, tax_married: 0.15 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Japan: { employer_rate: 0.16, employee_social: 0.14, tax_single: 0.22, tax_married: 0.18 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Brazil: { employer_rate: 0.28, employee_social: 0.11, tax_single: 0.22, tax_married: 0.18 }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 国家名称映射</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const countryMap = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>en: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"USA": "USA", "France": "France", "UK": "UK", "Germany": "Germany",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"Spain": "Spain", "Italy": "Italy", "Netherlands": "Netherlands",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"India": "India", "Japan": "Japan", "Brazil": "Brazil"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>cn: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"美国 (USA)": "USA", "法国 (France)": "France", "英国 (UK)": "UK",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"德国 (Germany)": "Germany", "西班牙 (Spain)": "Spain",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"意大利 (Italy)": "Italy", "荷兰 (Netherlands)": "Netherlands",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"印度 (India)": "India", "日本 (Japan)": "Japan", "巴西 (Brazil)": "Brazil"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 切换语言</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function switchLang(lang) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('en-content').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('cn-content').classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById(`${lang}-content`).classList.remove('hidden');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.querySelectorAll('.lang-btn').forEach(btn =&gt; btn.classList.remove('active'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>event.target.classList.add('active');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('result').style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 核心计算函数</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function calculate(lang) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const countrySelect = document.getElementById(`country-${lang}`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const salaryInput = document.getElementById(`salary-${lang}`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const marriedSelect = document.getElementById(`married-${lang}`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const employmentSelect = document.getElementById(`employment-${lang}`);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const salary = parseFloat(salaryInput.value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (isNaN(salary) || salary &lt;= 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const alertMsg = lang === 'en' ?<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Please enter a valid positive number for monthly gross salary (USD)!" :<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"请输入有效的月税前薪资（正数，美元）！";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>alert(alertMsg);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>salaryInput.focus();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const countryDisplay = countrySelect.value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const countryKey = countryMap[lang][countryDisplay];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const countryData = taxData[countryKey];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let employerCost = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let eorFee = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let employerCostDisplay = lang === 'en' ? "N/A (Not Applicable)" : "不适用";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (employmentSelect.value === "horizons") {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>eorFee = 450;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>employerCost = (salary * (1 + countryData.employer_rate)) + eorFee;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>employerCostDisplay = `$${employerCost.toFixed(2)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else if (employmentSelect.value === "gp") {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>eorFee = 400;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>employerCost = (salary * (1 + countryData.employer_rate)) + eorFee;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>employerCostDisplay = `$${employerCost.toFixed(2)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const employeeSocial = salary * countryData.employee_social;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const taxRate = marriedSelect.value === "yes" ? countryData.tax_married : countryData.tax_single;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const tax = salary * taxRate;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const netSalary = salary - employeeSocial - tax;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const resultDiv = document.getElementById('result');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>resultDiv.style.display = 'block';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (lang === 'en') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>resultDiv.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Calculation Result (${countryDisplay})&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;Employer Total Cost:&lt;/b&gt; ${employerCostDisplay}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;EOR Monthly Fee:&lt;/b&gt; ${eorFee &gt; 0 ? `$${eorFee.toFixed(2)}` : "N/A"}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;Employee Social Security:&lt;/b&gt; $${employeeSocial.toFixed(2)}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;Income Tax Deduction:&lt;/b&gt; $${tax.toFixed(2)}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;Employee Net Monthly Salary:&lt;/b&gt; $${netSalary.toFixed(2)}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>resultDiv.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h3&gt;计算结果 (${countryDisplay})&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;雇主总成本:&lt;/b&gt; ${employerCostDisplay}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;雇佣外包月费:&lt;/b&gt; ${eorFee &gt; 0 ? `$${eorFee.toFixed(2)}` : "不适用"}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;员工社保扣除:&lt;/b&gt; $${employeeSocial.toFixed(2)}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;所得税扣除:&lt;/b&gt; $${tax.toFixed(2)}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;b&gt;员工月净薪资:&lt;/b&gt; $${netSalary.toFixed(2)}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
